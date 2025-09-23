@@ -25,12 +25,39 @@ const AboutSection = () => {
   ];
 
   return (
-    <section id="about" className="py-20 relative overflow-hidden" style={{ background: 'var(--gradient-hero)' }}>
-      {/* Abstract purple background elements */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/30 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-accent/30 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-secondary/20 rounded-full blur-2xl"></div>
+    <section id="about" className="py-20 relative overflow-hidden bg-gradient-to-br from-purple-950 via-indigo-950 to-blue-950">
+      {/* Abstract flowing waves background */}
+      <div className="absolute inset-0 overflow-hidden">
+        {/* Wave 1 */}
+        <div className="absolute top-0 left-0 w-full h-full">
+          <svg className="absolute inset-0 w-full h-full opacity-30" viewBox="0 0 1200 800" fill="none">
+            <path d="M0,400 Q300,200 600,300 T1200,250 L1200,800 L0,800 Z" fill="url(#wave1)" />
+            <defs>
+              <linearGradient id="wave1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="hsl(250, 100%, 70%)" stopOpacity="0.6" />
+                <stop offset="100%" stopColor="hsl(271, 81%, 56%)" stopOpacity="0.3" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        
+        {/* Wave 2 */}
+        <div className="absolute top-0 left-0 w-full h-full">
+          <svg className="absolute inset-0 w-full h-full opacity-25" viewBox="0 0 1200 800" fill="none">
+            <path d="M0,500 Q400,100 800,400 T1200,350 L1200,800 L0,800 Z" fill="url(#wave2)" />
+            <defs>
+              <linearGradient id="wave2" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="hsl(200, 100%, 60%)" stopOpacity="0.4" />
+                <stop offset="100%" stopColor="hsl(250, 100%, 70%)" stopOpacity="0.2" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+
+        {/* Glowing orbs */}
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-cyan-400/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/3 right-1/3 w-48 h-48 bg-blue-400/20 rounded-full blur-2xl animate-pulse delay-700"></div>
+        <div className="absolute top-2/3 left-1/2 w-32 h-32 bg-purple-400/20 rounded-full blur-xl animate-pulse delay-1000"></div>
       </div>
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center mb-16">
