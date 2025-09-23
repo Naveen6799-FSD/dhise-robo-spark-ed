@@ -80,15 +80,15 @@ const AboutSection = () => {
               {features.map((feature, index) => (
                 <div 
                   key={index}
-                  className="flex items-start space-x-4 p-6 bg-card rounded-lg shadow-card hover:shadow-floating transition-all duration-300 animate-bounce-in"
+                  className="flex items-start space-x-4 p-6 bg-slate-800/90 backdrop-blur-sm rounded-xl shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 animate-bounce-in border border-white/10"
                   style={{ animationDelay: `${index * 200}ms` }}
                 >
                   <div className="flex-shrink-0 mt-1">
                     {feature.icon}
                   </div>
                   <div className="text-left">
-                    <h4 className="font-semibold text-foreground mb-2">{feature.title}</h4>
-                    <p className="text-muted-foreground">{feature.description}</p>
+                    <h4 className="font-semibold text-white mb-2">{feature.title}</h4>
+                    <p className="text-slate-300">{feature.description}</p>
                   </div>
                 </div>
               ))}
