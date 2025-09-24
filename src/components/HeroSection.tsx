@@ -36,18 +36,18 @@ const HeroSection = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in delay-300">
             <Button 
               onClick={handleStartNow}
-              variant="hero"
+              variant="cyber"
               size="lg"
-              className="text-lg px-8 py-4 animate-glow"
+              className="text-lg px-8 py-4 group"
             >
               Start Now
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button 
               onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
               variant="outline"
               size="lg"
-              className="text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-black"
+              className="text-lg px-8 py-4 border-neon-cyan/50 text-neon-cyan hover:bg-neon-cyan/10 hover:border-neon-cyan hover:shadow-neon backdrop-blur-sm"
             >
               Learn More
             </Button>
@@ -56,9 +56,16 @@ const HeroSection = () => {
       </div>
 
       {/* Floating Elements */}
-      <div className="absolute top-20 left-10 w-20 h-20 bg-primary/20 rounded-full animate-float"></div>
-      <div className="absolute bottom-40 right-20 w-16 h-16 bg-secondary/20 rounded-full animate-float delay-700"></div>
-      <div className="absolute top-1/2 left-1/4 w-12 h-12 bg-accent/20 rounded-full animate-float delay-1000"></div>
+      <div className="absolute top-20 left-10 w-20 h-20 bg-neon-cyan/20 rounded-full animate-float blur-sm"></div>
+      <div className="absolute bottom-40 right-20 w-16 h-16 bg-neon-magenta/20 rounded-full animate-float delay-700 blur-sm"></div>
+      <div className="absolute top-1/2 left-1/4 w-12 h-12 bg-neon-lime/20 rounded-full animate-float delay-1000 blur-sm"></div>
+
+      {/* Particle Network */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 left-1/3 w-1 h-1 bg-neon-cyan rounded-full animate-pulse"></div>
+        <div className="absolute top-1/2 right-1/4 w-1 h-1 bg-neon-magenta rounded-full animate-pulse delay-300"></div>
+        <div className="absolute bottom-1/3 left-1/2 w-1 h-1 bg-neon-lime rounded-full animate-pulse delay-600"></div>
+      </div>
     </section>
   );
 };

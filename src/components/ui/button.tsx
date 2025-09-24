@@ -19,9 +19,10 @@ const buttonVariants = cva(
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
         hero: "bg-gradient-hero text-primary-foreground hover:shadow-glow hover:scale-105 transition-all duration-300 font-semibold",
-        whatsapp: "bg-[#25D366] text-white hover:bg-[#20c158] shadow-card hover:shadow-floating transition-all duration-300 font-semibold",
+        whatsapp: "bg-[#25D366] text-white hover:bg-[#20c158] shadow-neon hover:shadow-whatsapp transition-all duration-300 font-semibold animate-pulse",
         gradient: "bg-gradient-primary text-primary-foreground hover:shadow-glow hover:scale-105 transition-all duration-300",
-        accent: "bg-gradient-accent text-accent-foreground hover:shadow-glow hover:scale-105 transition-all duration-300",
+        accent: "bg-gradient-accent text-accent-foreground hover:shadow-neon hover:scale-105 transition-all duration-300",
+        cyber: "bg-gradient-cyber border border-primary/30 text-primary-foreground hover:shadow-cyber hover:scale-105 transition-all duration-300",
       },
       size: {
         default: "h-10 px-4 py-2",

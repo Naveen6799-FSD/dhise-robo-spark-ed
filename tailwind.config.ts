@@ -54,20 +54,26 @@ export default {
 				card: {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
-				}
+				},
+				'neon-cyan': 'hsl(var(--neon-cyan))',
+				'neon-magenta': 'hsl(var(--neon-magenta))',
+				'neon-lime': 'hsl(var(--neon-lime))',
 			},
 			backgroundImage: {
 				'gradient-primary': 'var(--gradient-primary)',
 				'gradient-secondary': 'var(--gradient-secondary)',
 				'gradient-accent': 'var(--gradient-accent)',
-				'gradient-hero': 'var(--gradient-hero)'
+				'gradient-hero': 'var(--gradient-hero)',
+				'gradient-neon': 'var(--gradient-neon)',
+				'gradient-cyber': 'var(--gradient-cyber)'
 			},
 			boxShadow: {
 				'glow': 'var(--shadow-glow)',
 				'card': 'var(--shadow-card)',
 				'floating': 'var(--shadow-floating)',
-				'cyber': '0 0 20px hsl(271 81% 56% / 0.5), 0 0 40px hsl(271 81% 56% / 0.3)',
-				'neon': '0 0 10px hsl(200 100% 60% / 0.8), 0 0 20px hsl(200 100% 60% / 0.4)'
+				'neon': 'var(--shadow-neon)',
+				'cyber': 'var(--shadow-cyber)',
+				'whatsapp': 'var(--shadow-whatsapp)'
 			},
 			transitionTimingFunction: {
 				'smooth': 'var(--transition-smooth)',
