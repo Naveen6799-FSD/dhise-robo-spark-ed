@@ -48,32 +48,26 @@ Message: ${formData.message}`;
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Information */}
           <div className="space-y-8 animate-fade-in delay-200">
-            <Card className="shadow-card hover:shadow-floating transition-shadow duration-300">
+            <Card className="shadow-card hover:shadow-floating transition-shadow duration-300 hover:scale-105 hover:shadow-glow">
               <CardHeader>
                 <CardTitle className="flex items-center space-x-3">
                   <Phone className="h-6 w-6 text-primary" />
-                  <span>Phone Numbers</span>
+                  <span>Contact Numbers</span>
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-2">
                   <p className="flex items-center space-x-2">
                     <span>Primary:</span>
-                    <a href="tel:+919363215546" className="text-primary hover:underline">
-                      +91-9363215546
-                    </a>
-                  </p>
-                  <p className="flex items-center space-x-2">
-                    <span>Secondary:</span>
-                    <a href="tel:+918072022534" className="text-primary hover:underline">
-                      +91-8072022534
+                    <a href="tel:+919363215546" className="text-primary hover:underline hover:text-secondary transition-colors">
+                      +91-93632 15546
                     </a>
                   </p>
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="shadow-card hover:shadow-floating transition-shadow duration-300">
+            <Card className="shadow-card hover:shadow-floating transition-shadow duration-300 hover:scale-105 hover:shadow-glow">
               <CardHeader>
                 <CardTitle className="flex items-center space-x-3">
                   <MessageSquare className="h-6 w-6 text-secondary" />
@@ -84,14 +78,14 @@ Message: ${formData.message}`;
                 <Button 
                   onClick={() => window.open('https://wa.me/919363215546', '_blank')}
                   variant="whatsapp"
-                  className="w-full"
+                  className="w-full hover:shadow-glow transition-all duration-300"
                 >
                   Chat with us on WhatsApp
                 </Button>
               </CardContent>
             </Card>
 
-            <Card className="shadow-card hover:shadow-floating transition-shadow duration-300">
+            <Card className="shadow-card hover:shadow-floating transition-shadow duration-300 hover:scale-105 hover:shadow-glow">
               <CardHeader>
                 <CardTitle className="flex items-center space-x-3">
                   <Mail className="h-6 w-6 text-accent" />
@@ -99,9 +93,57 @@ Message: ${formData.message}`;
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground">
-                  For detailed inquiries, feel free to reach out via phone or WhatsApp
+                <p className="text-muted-foreground mb-2">
+                  <a href="mailto:info.dhisetechnologies@gmail.com" className="text-primary hover:underline hover:text-secondary transition-colors">
+                    info.dhisetechnologies@gmail.com
+                  </a>
                 </p>
+                <p className="text-sm text-muted-foreground">
+                  <a href="https://www.dhisetechnologies.in/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline hover:text-secondary transition-colors">
+                    www.dhisetechnologies.in
+                  </a>
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="shadow-card hover:shadow-floating transition-shadow duration-300 hover:scale-105 hover:shadow-glow">
+              <CardHeader>
+                <CardTitle className="flex items-center space-x-3">
+                  <MapPin className="h-6 w-6 text-primary" />
+                  <span>Address</span>
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  No. 3/21 Mothi Nagar Main Road,<br />
+                  Karambakkam, Porur,<br />
+                  Chennai - 600116, TN, India
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="shadow-card hover:shadow-floating transition-shadow duration-300 hover:scale-105 hover:shadow-glow">
+              <CardHeader>
+                <CardTitle className="flex items-center space-x-3">
+                  <MessageSquare className="h-6 w-6 text-accent" />
+                  <span>Social Media</span>
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-2">
+                  <p className="text-sm text-muted-foreground">
+                    <span className="font-medium">Proprietor:</span> V. Dhivya<br />
+                    <span className="text-xs">Sr. Technical Analyst & Founder</span>
+                  </p>
+                  <a 
+                    href="https://www.instagram.com/dhise_official?igsh=MTZxdnNuMGJxMDIzcA%3D%3D&utm_source=qr" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-block text-primary hover:underline hover:text-secondary transition-colors"
+                  >
+                    @dhise_official on Instagram
+                  </a>
+                </div>
               </CardContent>
             </Card>
           </div>

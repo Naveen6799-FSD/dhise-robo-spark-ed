@@ -35,7 +35,7 @@ const GallerySection = () => {
           {galleryImages.map((image, index) => (
             <div 
               key={index}
-              className="relative group cursor-pointer overflow-hidden rounded-lg shadow-card hover:shadow-floating transition-all duration-300 animate-fade-in"
+              className="relative group cursor-pointer overflow-hidden rounded-lg shadow-card hover:shadow-floating transition-all duration-300 animate-fade-in hover:scale-105 hover:shadow-glow"
               style={{ animationDelay: `${index * 100}ms` }}
               onClick={() => setSelectedImage(image.src)}
             >
@@ -44,8 +44,11 @@ const GallerySection = () => {
                 alt={image.alt}
                 className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
               />
+              {/* Hologram-style hover effect */}
+              <div className="absolute inset-0 bg-gradient-to-t from-purple-900/60 via-transparent to-cyan-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 border-2 border-cyan-400/0 group-hover:border-cyan-400/50 transition-all duration-300 rounded-lg"></div>
               <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <span className="text-white font-medium">View Image</span>
+                <span className="text-white font-medium bg-black/30 px-4 py-2 rounded-lg backdrop-blur-sm border border-cyan-400/30">View Image</span>
               </div>
             </div>
           ))}

@@ -1,5 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 import { GraduationCap, Users, Cog, BookOpen, UserCheck, School } from 'lucide-react';
+import { useScrollAnimation, useStaggeredScrollAnimation } from '../hooks/useScrollAnimation';
 import earlyYearsImage from '../assets/early-years.jpg';
 import elementaryImage from '../assets/elementary.jpg';
 import middleSchoolImage from '../assets/middle-school.jpg';
@@ -8,6 +9,8 @@ import teacherTrainingImage from '../assets/teacher-training.jpg';
 import schoolIntegrationImage from '../assets/school-integration.jpg';
 
 const CurriculumSection = () => {
+  const titleRef = useScrollAnimation<HTMLHeadingElement>();
+  const cardsRef = useStaggeredScrollAnimation<HTMLDivElement>(200);
   const curriculumLevels = [
     {
       title: "Early Years (PreKG-2)",
@@ -96,23 +99,51 @@ const CurriculumSection = () => {
   ];
 
   return (
-    <section id="curriculum" className="py-20 bg-background">
-      <div className="container mx-auto px-4">
+    <section id="curriculum" className="py-20 relative overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-indigo-950">
+      {/* AI & Robotics themed background */}
+      <div className="absolute inset-0 overflow-hidden">
+        {/* Futuristic grid */}
+        <div className="absolute inset-0 opacity-15">
+          <svg className="w-full h-full" viewBox="0 0 1200 800" fill="none">
+            <defs>
+              <pattern id="futuristic-grid" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
+                <path d="M 80 0 L 0 0 0 80" fill="none" stroke="hsl(271, 81%, 56%)" strokeWidth="0.8" opacity="0.5"/>
+                <circle cx="0" cy="0" r="2" fill="hsl(271, 81%, 66%)" opacity="0.7" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#futuristic-grid)" />
+          </svg>
+        </div>
+
+        {/* Robotic abstract shapes */}
+        <div className="absolute top-10 left-10 w-40 h-40 border-2 border-cyan-400/20 rotate-45 animate-spin-slow"></div>
+        <div className="absolute bottom-20 right-20 w-32 h-32 border border-purple-400/30 rounded-lg rotate-12 animate-float"></div>
+        <div className="absolute top-1/3 right-1/4 w-24 h-24 bg-gradient-to-br from-indigo-500/10 to-purple-500/10 transform rotate-45 animate-pulse delay-300"></div>
+
+        {/* AI neural glow */}
+        <div className="absolute top-1/5 right-1/5 w-56 h-56 bg-purple-400/10 rounded-full blur-3xl animate-pulse delay-500"></div>
+        <div className="absolute bottom-1/4 left-1/4 w-40 h-40 bg-cyan-400/15 rounded-full blur-2xl animate-pulse delay-1000"></div>
+        
+        {/* Digital pathways */}
+        <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent animate-pulse delay-700"></div>
+        <div className="absolute top-3/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-400/30 to-transparent animate-pulse delay-1200"></div>
+      </div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6 animate-fade-in">
+          <h2 ref={titleRef} className="text-3xl md:text-4xl font-bold text-foreground mb-6">
             Our Curriculum
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto animate-fade-in delay-100">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Comprehensive robotics education programs designed for every age group and skill level
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {curriculumLevels.map((level, index) => (
             <Card 
               key={index}
-              className="group hover:shadow-floating transition-all duration-300 transform hover:scale-105 animate-bounce-in border-0 overflow-hidden"
-              style={{ animationDelay: `${level.delay}ms` }}
+              className="group hover:shadow-floating transition-all duration-500 transform hover:scale-105 border-0 overflow-hidden hover:shadow-cyber hover:-translate-y-2 hover:border-cyan-400/30"
             >
               <div className={`h-2 ${level.bgColor}`}></div>
               <CardHeader className="pb-4">
